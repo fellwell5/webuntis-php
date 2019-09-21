@@ -12,6 +12,7 @@
     $subjects   = $untis->getSubjects();
     $teachers   = $untis->getTeachers();
     $rooms      = $untis->getRooms();
+    $holidays      = $untis->getHolidays();
 
     print_r($table);
     print_r($subjects);
