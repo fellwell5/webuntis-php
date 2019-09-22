@@ -154,5 +154,29 @@
             $json = json_encode($json, true);
             return self::request($json);
         }
+
+        public static function getHolidays(){
+            $json = array(
+                "id" => self::id(),
+                "method" => "getHolidays",
+                "params" => array(
+                ),
+                "jsonrpc" => "2.0"
+            );
+            $json = json_encode($json, true);
+            return self::request($json);
+        }
+
+        public static function getStatusData(){
+            $json = array(
+                "id" => self::id(),
+                "method" => "getStatusData",
+                "params" => array(
+                ),
+                "jsonrpc" => "2.0"
+            );
+            $json = json_encode($json, true);
+            return self::request($json);
+        }
     }
 ?>
