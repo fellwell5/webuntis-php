@@ -154,5 +154,41 @@
             $json = json_encode($json, true);
             return self::request($json);
         }
+        public static function getHolidays(){
+            $json = array(
+                "id" => self::id(),
+                "method" => "getHolidays",
+                "params" => array(
+                ),
+                "jsonrpc" => "2.0"
+            );
+            $json = json_encode($json, true);
+            return self::request($json);
+        }
+        public static function getCurrentSchoolyear(){
+            $json = array(
+                "id" => self::id(),
+                "method" => "getCurrentSchoolyear",
+                "params" => array(
+                ),
+                "jsonrpc" => "2.0"
+            );
+            $json = json_encode($json, true);
+            return self::request($json);
+        }
+        public static function getSubstitutions($from,$to){
+            $json = array(
+                "id" => self::id(),
+                "method" => "getSubstitutions",
+                "params" => array(
+                    "startDate" => $from,
+                    "endDate" => $to,
+                    "departmentId" => 0,
+                ),
+                "jsonrpc" => "2.0"
+            );
+            $json = json_encode($json, true);
+            return self::request($json);
+        }
     }
 ?>
